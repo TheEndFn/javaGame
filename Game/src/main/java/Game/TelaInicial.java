@@ -9,7 +9,7 @@ public class TelaInicial extends JFrame {
         // Configurações para a inicialização da janela
         setTitle("Tela Inicial");                       // Define o titulo do JFrame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Define a forma de fechamento do Programa
-        setSize(1200, 800);                             // Define a dimensão do JFrame ao ser executado
+        setSize(1200, 720);                             // Define a dimensão do JFrame ao ser executado
         setLocationRelativeTo(null);                    // Define a localização que o JFrame será iniciado no centro da tela
         setResizable(true);                             // Define que a tela pode ser redimensionada
 
