@@ -19,7 +19,7 @@ public class TelaGame extends JFrame {
         setLayout(new BorderLayout());                          
         
         
-        JPanel painelSuperior = new JPanel(new GridLayout(1, 2)); // Cria um painel
+        JPanel painelSuperior = new JPanel(new GridLayout(1, 2)); // Cria um JPanel com um GridLayout de duas partes "(1,2)"
         
         ImageIcon backgroundIcon = new ImageIcon(getClass().getResource("/imagens/Telainicial76.jpg"));
         Image backgroundImage = backgroundIcon.getImage();        
@@ -33,9 +33,9 @@ public class TelaGame extends JFrame {
         };      
         
         painelOpcoes = new JPanel();
-        painelOpcoes.setBorder(BorderFactory.createTitledBorder("Opções"));
-        painelOpcoes.add(new JButton("ACEITAR"));
-        painelOpcoes.add(new JButton("IGNORAR"));
+        painelOpcoes.setBorder(BorderFactory.createTitledBorder("Opções")); // Cria e define um nome para a borda do meu JPanel
+        painelOpcoes.add(new JButton("ACEITAR"));                           // Cria um botão dentro do JPanel
+        painelOpcoes.add(new JButton("IGNORAR"));                           // ...
             
         painelSuperior.add(painelEsquerdo);
         painelSuperior.add(painelOpcoes);
@@ -44,13 +44,13 @@ public class TelaGame extends JFrame {
         painelInferior.setBorder(BorderFactory.createTitledBorder("Descrição"));
         painelInferior.setLayout(new BorderLayout());
         
-        descricao = new JTextArea();
-        descricao.setEditable(false);   // Nao permite o usuário alterar o conteúdo
+        descricao = new JTextArea();                                            // Cria um JTextArea
+        descricao.setEditable(false);                                           // Não permite o usuário alterar o conteúdo
         painelInferior.add(new JScrollPane(descricao), BorderLayout.CENTER);    // Adiciona  um JScrollPane ao painel infeiror para melhor observação do texto
         
         
         nomeJogador = JOptionPane.showInputDialog(this, "Digite o nome do seu personagem:");   // Cria uma painel interativo onde o jogador poderá por o nome de seu personagem
-        if (nomeJogador == null || nomeJogador.trim().isEmpty()){                               // Caso o valor seja "null", será colocado o nome "Aventureiro ao persongem" 
+        if (nomeJogador == null || nomeJogador.trim().isEmpty()){                               // Caso o valor seja "null", será colocado o nome "Dragos" 
             nomeJogador = "Dragos";                                                         
         }
         
@@ -66,7 +66,7 @@ public class TelaGame extends JFrame {
         
         add(splitPane, BorderLayout.CENTER);
         
-        // Primeira decisão
+        // Lista de atividade e de possiblididades do jogo. Usamos o método "atualizarOpcoes" para poder fazer essas decisões funcionar. Ele cria novos botões, novas ações para os botões e atualiza o texto do JTextArea.         
         atualizarOpcoes(
             new String[]{"ACEITAR", "IGNORAR"},
             new Runnable[]{
@@ -562,15 +562,15 @@ public class TelaGame extends JFrame {
     private void atualizarOpcoes(String[] textosBotoes, Runnable[] acoes) { // Criando um Método.
         painelOpcoes.removeAll();                                           // Remove o contéudo do painelOpcoes
         
-        for(int i = 0; i < textosBotoes.length; i++){       // Cria um laço for 
-            JButton botao = new JButton(textosBotoes[i]);
-            Runnable acao = acoes[i];
-            botao.addActionListener(e -> acao.run());
-            painelOpcoes.add(botao);
+        for(int i = 0; i < textosBotoes.length; i++){                       // Cria um laço for que conta a quantidade de itens da array textosBotoes
+            JButton btn = new JButton(textosBotoes[i]);                     // Cria a quantidade de botões de acordo com a quantidade de itens na array textoBotoes
+            Runnable acao = acoes[i];                                       // Adiciona à lista Runnable a quantidade de ações que terão.  
+            btn.addActionListener(e -> acao.run());                         // Define a ação que o botão terá"
+            painelOpcoes.add(btn);                                          
         } 
           
-        painelOpcoes.revalidate();
-        painelOpcoes.repaint();
+        painelOpcoes.revalidate(); // Entende que o Painel foi atualizado e reorgania o layout do painel.
+        painelOpcoes.repaint();    // Redesenha o painel de acordo com os comandos.
         
     }
     
