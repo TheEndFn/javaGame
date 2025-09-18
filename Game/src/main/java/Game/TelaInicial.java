@@ -1,15 +1,15 @@
 package Game; 
 
-import javax.swing.*; // Importando os metodos do javax.Swing
-import java.awt.*;    // importando os medotos do java.awt
+import javax.swing.*; 
+import java.awt.*;    
 
 public class TelaInicial extends JFrame { 
 
     public TelaInicial() {
-        // Configurações para a inicialização da janela
+        // Configurações para a inicialização do JFrame (TelaInicial)
         setTitle("Tela Inicial");                       // Define o titulo do JFrame
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Define a forma de fechamento do Programa
-        setSize(1200, 720);                             // Define a dimensão do JFrame ao ser executado
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Faz o programa ser finalizado ao fechar o JFrame
+        setSize(1280, 720);                             // Define a dimensão do JFrame ao ser executado
         setLocationRelativeTo(null);                    // Define a localização que o JFrame será iniciado no centro da tela
         setResizable(true);                             // Define que a tela pode ser redimensionada
 
