@@ -146,42 +146,411 @@ public class TelaGame extends JFrame {
                                         },    
                                             
                                         () -> {
-                                            descricao.setText("  Você entra e essa sala é cheia de objetos mágicos. Ao tocar em um livro que estava na sala, suas magia se tornam muito mais fortes e você consegue manipular a sua magia com mais facilidade \n"
-                                                + ", além de aprender algus feitiços com os livros que estavam ali. \n\n"
+                                            descricao.setText("  Você entra e essa sala é cheia de objetos mágicos. Ao tocar em um livro que estava na sala, suas magia se tornam muito mais fortes e você consegue manipular a sua magia com mais facilidade, além de\n"
+                                                + " aprender algus feitiços com os livros que estavam ali. \n\n"
                                                 + "  Ao terminar tudo que podia fazer ali, você observa que existe uma porta e vai em direção a ela. Ao passar pela porta você seque por uma corredor e vê uma escada que leva ao topo da torre. \n\n\n"
                                                 + "   == Terceiro Desafio: O Mago das Sombras ==  \n\n"
-                                                + "  Ao chegar no topo da Torre o Mago da Sombras aparece e uma luta feroz de feitiços começa acontecer. Essa luta supera todas as outras que você já teve, mas com o aprimoramento da sala de feitiços você consegue \n"
-                                                + "derrotar o Mago das Sombras, com um acerto certeiro em seu peito e em sua cabeça. \n\n\n "
+                                                + "  Ao chegar no topo da Torre o Mago da Sombras aparece e uma luta feroz de feitiços começa acontecer. Essa luta supera todas as outras que você já teve, mas com o aprimoramento da sala de feitiços você\n"
+                                                + " consegue derrotar o Mago das Sombras, com um acerto certeiro em seu peito e em sua cabeça. \n\n\n "
                                                 + "   == Final: O Artefato == \n\n"
                                                 + "  Depois da luta você está com o artefato em suas mãos e precisa fazer uma escolha. \n\n\n"
                                                 + "  1º Escolha: Usar o poder do artefato para promover a paz no mundo, gerando uma Nova Era.\n\n"
                                                 + "  2º Escolha: Destruir o artefato.\n\n\n"
                                                 + "  Agora é a sua ultima decisão. Qual é a sua escolha? Usar ou destuir? \n\n");
                                             atualizarOpcoes(
-                                                    new String[]{"USAR","DESTRUIR"},
-                                                    new Runnable[] {
-                                                        () -> {
-                                                            descricao.setText("");  
-                                                        },
-                                                        () -> {}
+                                                new String[]{"USAR", "DESTRUIR"},
+                                                new Runnable[]{
+                                                    () -> {
+                                                        descricao.setText("  Confiando no que o Viajante te disse, você usa o artefato e logo sente uma tontura e fraqueza que te faz solta o artefato. De dentro do artefato sai uma fumaça escura e densa que se transforma \n"
+                                                            + "no viajante por um estante e você nunca mais é visto. \n\n"
+                                                            + "   == Alguns anos depois == \n\n"
+                                                            + "  Um jovem Aventureiro passa pela Torre Sombria e demonstra curiosidade. Enquanto ele olha para a Torre, um viajante aparece e explica que essa Torre é especial e pergunta se ele sabe sobre a Lenda da Torre \n"
+                                                            + "que é passada de geração em geração naquela região. O jovem olha para a Torre e um espirio aventureiro e de coragem preenche seu coração, enquanto os olhos do viajante brilham com um vermelho sombrio... \n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    },
+                                                    () -> {
+                                                        descricao.setText("  Após tudo o que viu e o que passou, você percebe que aquele poder não tem nada de bom e decide destruir o artefato. Ao destruir o artefato uma grande explosão é ouvida na torre e ela começa a cair. Você\n"
+                                                            + "consegue sobreviver por sorte e ao se levantar você observa que uma fumaça escura e espesa com a forma do viajante se forma entre os escombros da Torre, mas logo em seguida se deforma e some. \n\n"
+                                                            + "Nunca mais houve guerras e coisas ruins naquela regiao, pois o artefato maligno que era o causador delas havia sido destruido. \n\n\n"
+                                                            + nomeJogador + ", continua sua aventura pelo mundo e inspira outros aventureiros a enfrentar aquilo que é sombrio, pois tudo é possível para alguém com uma alma pura.\n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
                                                     }
+                                                }
                                             );
                                         }
                                     }
                                 );
                             },
-                            () -> descricao.setText("Você perde a oportunidade de aprender magia básica e vai para a Torre sozinho.")
+                            () -> {
+                                descricao.setText(" O Viajante te avisa novamente sobre os perigos que estão na Torre, mas não te oferece ajuda novamente. \n\n"
+                                    + "  O viajante se retira e você vai em direção as portas da Torre. Ao tentar abri-las, você percebe que elas estão trancadas e você não consegue entra. Até que você enxerga um buraco ao lado da torre e entra por \n"
+                                        + "ali.\n\n\n"
+                                    + "   == Primeiro Desafio: O Esqueleto ==  \n\n "
+                                    + "  Você entra na Torre e caminha alguns metros até entrar em uma sala escura. Derrepente as porta desta sala se fecham e um esqueleto se levanta empunhando uma espada afiada. Ele corre em sua direção\n"
+                                    + "fazendo um barulho apavorante. Você entra em despero e tenta correr do esqueleto, mas ele é muito rápido. Você entende que terá que lutar e vê uma espada ao lado da porta. Logo após ter pego a espada, um \n"
+                                    + "grande duelo começa e você é ferido levemente no rosto, mas consegue derrotar o esqueleto. \n\n"
+                                    + "  As portas que haviam se fechado, novamente se abrem e você continua andando até chegar em uma bifurcação. Ali você encontra duas portas, uma a direita e outra a esquerda.\n\n\n"
+                                    + "   == Segundo Desafio: As Portas == \n\n"
+                                    + "  A porta da direita é sombria, possui um cheiro ruim e você vê fumaça saindo pelas frestas das portas.\n\n"
+                                    + "  A porta da esquerda possui um silencio ensurdecedor e símbolos estranhos.\n\n\n"
+                                    + "  Agora você tem que decidir por qual porta você vai seguir em frente. Direita ou esquerda ?\n\n");
+                                atualizarOpcoes(
+                                    new String[]{"PORTA DIREITA", "PORTA ESQUERDA"},
+                                    new Runnable[]{
+                                        () -> {
+                                            descricao.setText("  Você entra e essa sala é bem maior do que a que você derrotou o esqueleto, mas como anteriormente, as portas se fecham e você fica preso. Você passa alguns minutos tentando sair, até que a sala começa \n"
+                                                + "a fazer alguns sons esquisitos e de uma das paredes surge um golem de pedra enorme que te ataca com muita furia. Você enfrenta o Golem, mas ele é muito mais forte que você. Nesse instante, você foge \n"
+                                                + "pela abertura que o golem deixou na parede, correndo por alguns corredores até conseguir despistar o golem.\n\n"
+                                                + "  Você caminha e parece que está voltando para o lugar onde o Golem estava, mas esse corredor te leva às escadas que vão ao topo da Torre. \n\n"
+                                                + "   == Terceiro Desafio: O Mago das Sombras ==  \n\n"
+                                                + "  Ao chegar no topo da Torre o Mago da Sombras aparece e te ataca com toda a força que ele tem. Essa luta supera todas as outras que você já teve, mas por um descuido dele e por sua sagacidade, você \n"
+                                                + "consegue tirar o artefato dele. Sem você fazer nada, o artefato solta uma magia que atravessa o coração do mago, matando ele em segundos.\n"
+                                                + "\n\n "
+                                                + "   == Final: O Artefato == \n\n"
+                                                + "  Depois da luta você está com o artefato em suas mãos e precisa fazer uma escolha. \n\n\n"
+                                                + "  1º Escolha: Usar o poder do artefato para promover a paz no mundo, gerando uma Nova Era.\n\n"
+                                                + "  2º Escolha: Destruir o artefato.\n\n\n"
+                                                + "  Agora é a sua ultima decisão. Qual é a sua escolha? Usar ou destuir? \n\n");
+                                            atualizarOpcoes(
+                                                new String[]{"USAR", "DESTRUIR"},
+                                                new Runnable[]{
+                                                    () -> {
+                                                        descricao.setText("  Confiando no que o Viajante te disse, você usa o artefato e logo sente uma tontura e fraqueza que te faz solta o artefato. De dentro do artefato sai uma fumaça escura e densa que se transforma \n"
+                                                            + "no viajante por um estante e você nunca mais é visto. \n\n"
+                                                            + "   == Alguns anos depois == \n\n"
+                                                            + "  Um jovem Aventureiro passa pela Torre Sombria e demonstra curiosidade. Enquanto ele olha para a Torre, um viajante aparece e explica que essa Torre é especial e pergunta se ele sabe sobre a Lenda da Torre \n"
+                                                            + "que é passada de geração em geração naquela região. O jovem olha para a Torre e um espirio aventureiro e de coragem preenche seu coração, enquanto os olhos do viajante brilham com um vermelho sombrio... \n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    },
+                                                    () -> {
+                                                        descricao.setText("  Após tudo o que viu e o que passou, você percebe que aquele poder não tem nada de bom e decide destruir o artefato. Ao destruir o artefato uma grande explosão é ouvida na torre e ela começa a cair. Você\n"
+                                                            + "consegue sobreviver por sorte e ao se levantar você observa que uma fumaça escura e espesa com a forma do viajante se forma entre os escombros da Torre, mas logo em seguida se deforma e some. \n\n"
+                                                            + "Nunca mais houve guerras e coisas ruins naquela regiao, pois o artefato maligno que era o causador delas havia sido destruido. \n\n\n"
+                                                            + nomeJogador + ", continua sua aventura pelo mundo e inspira outros aventureiros a enfrentar aquilo que é sombrio, pois tudo é possível para alguém com uma alma pura.\n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    }
+                                                }
+                                            );
+                                        },    
+                                            
+                                        () -> {
+                                            descricao.setText("  Você entra e essa sala é cheia de objetos mágicos. Você começa a olhar alguns livros que estão ali e encontra um pergaminhi antigo. Esse pergaminho ensina como alguém que não possui magia pode \n"
+                                                + "aprender habilidades de furtividade. Mais do que depresa, você começa a estudar e aprende com maestria aquela arte.\n\n"
+                                                + "  Ao terminar tudo que podia fazer ali, você observa que existe uma porta e vai em direção a ela. Ao passar pela porta você seque por uma corredor e vê uma escada que leva ao topo da torre. \n\n\n"
+                                                + "   == Terceiro Desafio: O Mago das Sombras ==  \n\n"
+                                                + "  Ao chegar no topo da Torre o Mago da Sombras aparece e te ataca com toda a força que ele tem. Essa luta supera todas as outras que você já teve, mas por um descuido dele e por sua sagacidade, você \n"
+                                                + "consegue tirar o artefato dele. Sem você fazer nada, o artefato solta uma magia que atravessa o coração do mago, matando ele em segundos.\n\n"
+                                                + "   == Final: O Artefato == \n\n"
+                                                + "  Depois da luta você está com o artefato em suas mãos e precisa fazer uma escolha. \n\n\n"
+                                                + "  1º Escolha: Usar o poder do artefato para promover a paz no mundo, gerando uma Nova Era.\n\n"
+                                                + "  2º Escolha: Destruir o artefato.\n\n\n"
+                                                + "  Agora é a sua ultima decisão. Qual é a sua escolha? Usar ou destuir? \n\n");
+                                            atualizarOpcoes(
+                                                new String[]{"USAR", "DESTRUIR"},
+                                                new Runnable[]{
+                                                    () -> {
+                                                        descricao.setText("  Confiando no que o Viajante te disse, você usa o artefato e logo sente uma tontura e fraqueza que te faz solta o artefato. De dentro do artefato sai uma fumaça escura e densa que se transforma \n"
+                                                            + "no viajante por um estante e você nunca mais é visto. \n\n"
+                                                            + "   == Alguns anos depois == \n\n"
+                                                            + "  Um jovem Aventureiro passa pela Torre Sombria e demonstra curiosidade. Enquanto ele olha para a Torre, um viajante aparece e explica que essa Torre é especial e pergunta se ele sabe sobre a Lenda da Torre \n"
+                                                            + "que é passada de geração em geração naquela região. O jovem olha para a Torre e um espirio aventureiro e de coragem preenche seu coração, enquanto os olhos do viajante brilham com um vermelho sombrio... \n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    },
+                                                    () -> {
+                                                        descricao.setText("  Após tudo o que viu e o que passou, você percebe que aquele poder não tem nada de bom e decide destruir o artefato. Ao destruir o artefato uma grande explosão é ouvida na torre e ela começa a cair. Você\n"
+                                                            + "consegue sobreviver por sorte e ao se levantar você observa que uma fumaça escura e espesa com a forma do viajante se forma entre os escombros da Torre, mas logo em seguida se deforma e some. \n\n"
+                                                            + "Nunca mais houve guerras e coisas ruins naquela regiao, pois o artefato maligno que era o causador delas havia sido destruido. \n\n\n"
+                                                            + nomeJogador + ", continua sua aventura pelo mundo e inspira outros aventureiros a enfrentar aquilo que é sombrio, pois tudo é possível para alguém com uma alma pura.\n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    }
+                                                }
+                                            );
+                                        }
+                                    }
+                                );
+                            }
                         }
                     );
                 },
                 () -> {
                     // Jogador recusou
-                    descricao.setText("Você recusou a missão e voltou para casa.");
+                    descricao.setText("  O Viajante apenas te conta que essa Torre é especial e pode dar grandes poderes para quem conseguir pegar o artefado do mago que está na Torre. Ele tambem fala que já tentou entrar na Torre, mas lá existe \n"
+                            + "uma presença maligna cuja aura negra amedronta as pessoas que passam ali. O Viajante vê em seu olhar a vontade de se aventurar na Torre e oferece ajuda para que você possa enfrentar a escuridão da Torre. \n\n"
+                            + "  Mais uma vez é a sua vez. Você aceita a ajuda do Viajante ou recusa a proposta dele ?");
                     atualizarOpcoes(
-                        new String[]{"Dormir", "Refletir"},
+                        new String[]{"ACEITAR AJUDA", "RECUSAR AJUDA"},
                         new Runnable[]{
-                            () -> descricao.setText("Você dormiu e sonhou com a aventura perdida."),
-                            () -> descricao.setText("Você refletiu e se arrependeu da recusa...")
+                            () -> {
+                                descricao.setText("  Sem demorar, o Viajante passa um tempo te ensinando magia básica para que você possa enfrentar os perigos da Torre.\n\n"
+                                    + "  Depois de ter aprendido a manipular corretamente a magia básica, você se dirige em direção da porta principal da Torre. As portas são pesadas e você faz um esforço até conseguir abri-las um pouco.\n\n\n"
+                                    + "   == Primeiro Desafio: O Esqueleto ==  \n\n "
+                                    + "  Você entra na Torre e caminha alguns metros até entrar em uma sala escura. Derrepente as porta se fecham e um esqueleto se levanta empunhando uma espada afiada. Ele corre em sua direção\n"
+                                    + "fazendo um barulho apavorante, mas você o destroi com a magia que havia acabado de aprender.\n"
+                                    + "  As portas que haviam se fechado, novamente se abrem e você continua andando até chegar em uma bifurcação. Ali você encontra duas portas, uma a direita e outra a esquerda.\n\n\n"
+                                    + "   == Segundo Desafio: As Portas == \n\n"
+                                    + "  A porta da direita é sombria, possui um cheiro ruim e você vê fumaça saindo pelas frestas das portas.\n\n"
+                                    + "  A porta da esquerda possui um silencio ensurdecedor e símbolos estranhos.\n\n\n"
+                                    + "  Agora você tem que decidir por qual porta você vai seguir em frente. Direita ou esquerda ?\n\n");
+                                atualizarOpcoes(
+                                    new String[]{"PORTA DIREITA", "PORTA ESQUERDA"},
+                                    new Runnable[]{
+                                        () -> {
+                                            descricao.setText("  Você entra e essa sala é bem maior do que a que você derrotou o esqueleto, mas como anteriormente, as portas se fecham e você fica preso. Você passa alguns minutos tentando sair, até que a sala começa \n"
+                                                    + "a fazer alguns sons esquisitos e de uma das paredes surge um golem de pedra enorme que te ataca com muita furia. Você enfrenta o Golem com muita dificuldade, mas consegue derrotá-lo usando a magia. \n\n"
+                                                    + "  Dessa vez as portas não se abrem e você usa a magia para empurrar a porta até que consiga passar.\n\n"
+                                                    + "  Ao passar pela porta você seque por uma corredor e vê uma escada que leva ao topo da torre. \n\n\n"
+                                                    + "   == Terceiro Desafio: O Mago das Sombras ==  \n\n"
+                                                    + "  Ao chegar no topo da Torre o Mago da Sombras aparece e uma luta feroz de feitiços começa acontecer. Essa luta supera todas as outras que você já teve, mas com os duelos anteriores você aperfeiçoou sua \n"
+                                                    + "habilidades e consegue com muita dificuldade derrotar o Mago por um descuido dele. \n\n\n "
+                                                    + "   == Final: O Artefato == \n\n"
+                                                    + "  Depois da luta você está com o artefato em suas mãos e precisa fazer uma escolha. \n\n\n"
+                                                    + "  1º Escolha: Usar o poder do artefato para promover a paz no mundo, gerando uma Nova Era.\n\n"
+                                                    + "  2º Escolha: Destruir o artefato.\n\n\n"
+                                                    + "  Agora é a sua ultima decisão. Qual é a sua escolha? Usar ou destuir? \n\n");
+                                            atualizarOpcoes(
+                                                new String[]{"USAR", "DESTRUIR"},
+                                                new Runnable[]{
+                                                    () -> {
+                                                        descricao.setText("  Confiando no que o Viajante te disse, você usa o artefato e logo sente uma tontura e fraqueza que te faz solta o artefato. De dentro do artefato sai uma fumaça escura e densa que se transforma \n"
+                                                            + "no viajante por um estante e você nunca mais é visto. \n\n"
+                                                            + "   == Alguns anos depois == \n\n"
+                                                            + "  Um jovem Aventureiro passa pela Torre Sombria e demonstra curiosidade. Enquanto ele olha para a Torre, um viajante aparece e explica que essa Torre é especial e pergunta se ele sabe sobre a Lenda da Torre \n"
+                                                            + "que é passada de geração em geração naquela região. O jovem olha para a Torre e um espirio aventureiro e de coragem preenche seu coração, enquanto os olhos do viajante brilham com um vermelho sombrio... \n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    },
+                                                    () -> {
+                                                        descricao.setText("  Após tudo o que viu e o que passou, você percebe que aquele poder não tem nada de bom e decide destruir o artefato. Ao destruir o artefato uma grande explosão é ouvida na torre e ela começa a cair. Você\n"
+                                                            + "consegue sobreviver por sorte e ao se levantar você observa que uma fumaça escura e espesa com a forma do viajante se forma entre os escombros da Torre, mas logo em seguida se deforma e some. \n\n"
+                                                            + "Nunca mais houve guerras e coisas ruins naquela regiao, pois o artefato maligno que era o causador delas havia sido destruido. \n\n\n"
+                                                            + nomeJogador + ", continua sua aventura pelo mundo e inspira outros aventureiros a enfrentar aquilo que é sombrio, pois tudo é possível para alguém com uma alma pura.\n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    }
+                                                }
+                                            );
+                                        },    
+                                            
+                                        () -> {
+                                            descricao.setText("  Você entra e essa sala é cheia de objetos mágicos. Ao tocar em um livro que estava na sala, suas magia se tornam muito mais fortes e você consegue manipular a sua magia com mais facilidade, além de\n"
+                                                + " aprender algus feitiços com os livros que estavam ali. \n\n"
+                                                + "  Ao terminar tudo que podia fazer ali, você observa que existe uma porta e vai em direção a ela. Ao passar pela porta você seque por uma corredor e vê uma escada que leva ao topo da torre. \n\n\n"
+                                                + "   == Terceiro Desafio: O Mago das Sombras ==  \n\n"
+                                                + "  Ao chegar no topo da Torre o Mago da Sombras aparece e uma luta feroz de feitiços começa acontecer. Essa luta supera todas as outras que você já teve, mas com o aprimoramento da sala de feitiços você\n"
+                                                + " consegue derrotar o Mago das Sombras, com um acerto certeiro em seu peito e em sua cabeça. \n\n\n "
+                                                + "   == Final: O Artefato == \n\n"
+                                                + "  Depois da luta você está com o artefato em suas mãos e precisa fazer uma escolha. \n\n\n"
+                                                + "  1º Escolha: Usar o poder do artefato para promover a paz no mundo, gerando uma Nova Era.\n\n"
+                                                + "  2º Escolha: Destruir o artefato.\n\n\n"
+                                                + "  Agora é a sua ultima decisão. Qual é a sua escolha? Usar ou destuir? \n\n");
+                                            atualizarOpcoes(
+                                                new String[]{"USAR", "DESTRUIR"},
+                                                new Runnable[]{
+                                                    () -> {
+                                                        descricao.setText("  Confiando no que o Viajante te disse, você usa o artefato e logo sente uma tontura e fraqueza que te faz solta o artefato. De dentro do artefato sai uma fumaça escura e densa que se transforma \n"
+                                                            + "no viajante por um estante e você nunca mais é visto. \n\n"
+                                                            + "   == Alguns anos depois == \n\n"
+                                                            + "  Um jovem Aventureiro passa pela Torre Sombria e demonstra curiosidade. Enquanto ele olha para a Torre, um viajante aparece e explica que essa Torre é especial e pergunta se ele sabe sobre a Lenda da Torre \n"
+                                                            + "que é passada de geração em geração naquela região. O jovem olha para a Torre e um espirio aventureiro e de coragem preenche seu coração, enquanto os olhos do viajante brilham com um vermelho sombrio... \n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    },
+                                                    () -> {
+                                                        descricao.setText("  Após tudo o que viu e o que passou, você percebe que aquele poder não tem nada de bom e decide destruir o artefato. Ao destruir o artefato uma grande explosão é ouvida na torre e ela começa a cair. Você\n"
+                                                            + "consegue sobreviver por sorte e ao se levantar você observa que uma fumaça escura e espesa com a forma do viajante se forma entre os escombros da Torre, mas logo em seguida se deforma e some. \n\n"
+                                                            + "Nunca mais houve guerras e coisas ruins naquela regiao, pois o artefato maligno que era o causador delas havia sido destruido. \n\n\n"
+                                                            + nomeJogador + ", continua sua aventura pelo mundo e inspira outros aventureiros a enfrentar aquilo que é sombrio, pois tudo é possível para alguém com uma alma pura.\n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    }
+                                                }
+                                            );
+                                        }
+                                    }
+                                );
+                            },
+                            () -> {
+                                descricao.setText(" O Viajante te avisa novamente sobre os perigos que estão na Torre, mas não te oferece ajuda novamente. \n\n"
+                                    + "  O viajante se retira e você vai em direção as portas da Torre. Ao tentar abri-las, você percebe que elas estão trancadas e você não consegue entra. Até que você enxerga um buraco ao lado da torre e entra por \n"
+                                        + "ali.\n\n\n"
+                                    + "   == Primeiro Desafio: O Esqueleto ==  \n\n "
+                                    + "  Você entra na Torre e caminha alguns metros até entrar em uma sala escura. Derrepente as porta desta sala se fecham e um esqueleto se levanta empunhando uma espada afiada. Ele corre em sua direção\n"
+                                    + "fazendo um barulho apavorante. Você entra em despero e tenta correr do esqueleto, mas ele é muito rápido. Você entende que terá que lutar e vê uma espada ao lado da porta. Logo após ter pego a espada, um \n"
+                                    + "grande duelo começa e você é ferido levemente no rosto, mas consegue derrotar o esqueleto. \n\n"
+                                    + "  As portas que haviam se fechado, novamente se abrem e você continua andando até chegar em uma bifurcação. Ali você encontra duas portas, uma a direita e outra a esquerda.\n\n\n"
+                                    + "   == Segundo Desafio: As Portas == \n\n"
+                                    + "  A porta da direita é sombria, possui um cheiro ruim e você vê fumaça saindo pelas frestas das portas.\n\n"
+                                    + "  A porta da esquerda possui um silencio ensurdecedor e símbolos estranhos.\n\n\n"
+                                    + "  Agora você tem que decidir por qual porta você vai seguir em frente. Direita ou esquerda ?\n\n");
+                                atualizarOpcoes(
+                                    new String[]{"PORTA DIREITA", "PORTA ESQUERDA"},
+                                    new Runnable[]{
+                                        () -> {
+                                            descricao.setText("  Você entra e essa sala é bem maior do que a que você derrotou o esqueleto, mas como anteriormente, as portas se fecham e você fica preso. Você passa alguns minutos tentando sair, até que a sala começa \n"
+                                                + "a fazer alguns sons esquisitos e de uma das paredes surge um golem de pedra enorme que te ataca com muita furia. Você enfrenta o Golem, mas ele é muito mais forte que você. Nesse instante, você foge \n"
+                                                + "pela abertura que o golem deixou na parede, correndo por alguns corredores até conseguir despistar o golem.\n\n"
+                                                + "  Você caminha e parece que está voltando para o lugar onde o Golem estava, mas esse corredor te leva às escadas que vão ao topo da Torre. \n\n"
+                                                + "   == Terceiro Desafio: O Mago das Sombras ==  \n\n"
+                                                + "  Ao chegar no topo da Torre o Mago da Sombras aparece e te ataca com toda a força que ele tem. Essa luta supera todas as outras que você já teve, mas por um descuido dele e por sua sagacidade, você \n"
+                                                + "consegue tirar o artefato dele. Sem você fazer nada, o artefato solta uma magia que atravessa o coração do mago, matando ele em segundos.\n"
+                                                + "\n\n "
+                                                + "   == Final: O Artefato == \n\n"
+                                                + "  Depois da luta você está com o artefato em suas mãos e precisa fazer uma escolha. \n\n\n"
+                                                + "  1º Escolha: Usar o poder do artefato para promover a paz no mundo, gerando uma Nova Era.\n\n"
+                                                + "  2º Escolha: Destruir o artefato.\n\n\n"
+                                                + "  Agora é a sua ultima decisão. Qual é a sua escolha? Usar ou destuir? \n\n");
+                                            atualizarOpcoes(
+                                                new String[]{"USAR", "DESTRUIR"},
+                                                new Runnable[]{
+                                                    () -> {
+                                                        descricao.setText("  Confiando no que o Viajante te disse, você usa o artefato e logo sente uma tontura e fraqueza que te faz solta o artefato. De dentro do artefato sai uma fumaça escura e densa que se transforma \n"
+                                                            + "no viajante por um estante e você nunca mais é visto. \n\n"
+                                                            + "   == Alguns anos depois == \n\n"
+                                                            + "  Um jovem Aventureiro passa pela Torre Sombria e demonstra curiosidade. Enquanto ele olha para a Torre, um viajante aparece e explica que essa Torre é especial e pergunta se ele sabe sobre a Lenda da Torre \n"
+                                                            + "que é passada de geração em geração naquela região. O jovem olha para a Torre e um espirio aventureiro e de coragem preenche seu coração, enquanto os olhos do viajante brilham com um vermelho sombrio... \n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    },
+                                                    () -> {
+                                                        descricao.setText("  Após tudo o que viu e o que passou, você percebe que aquele poder não tem nada de bom e decide destruir o artefato. Ao destruir o artefato uma grande explosão é ouvida na torre e ela começa a cair. Você\n"
+                                                            + "consegue sobreviver por sorte e ao se levantar você observa que uma fumaça escura e espesa com a forma do viajante se forma entre os escombros da Torre, mas logo em seguida se deforma e some. \n\n"
+                                                            + "Nunca mais houve guerras e coisas ruins naquela regiao, pois o artefato maligno que era o causador delas havia sido destruido. \n\n\n"
+                                                            + nomeJogador + ", continua sua aventura pelo mundo e inspira outros aventureiros a enfrentar aquilo que é sombrio, pois tudo é possível para alguém com uma alma pura.\n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    }
+                                                }
+                                            );
+                                        },    
+                                            
+                                        () -> {
+                                            descricao.setText("  Você entra e essa sala é cheia de objetos mágicos. Você começa a olhar alguns livros que estão ali e encontra um pergaminhi antigo. Esse pergaminho ensina como alguém que não possui magia pode \n"
+                                                + "aprender habilidades de furtividade. Mais do que depresa, você começa a estudar e aprende com maestria aquela arte.\n\n"
+                                                + "  Ao terminar tudo que podia fazer ali, você observa que existe uma porta e vai em direção a ela. Ao passar pela porta você seque por uma corredor e vê uma escada que leva ao topo da torre. \n\n\n"
+                                                + "   == Terceiro Desafio: O Mago das Sombras ==  \n\n"
+                                                + "  Ao chegar no topo da Torre o Mago da Sombras aparece e te ataca com toda a força que ele tem. Essa luta supera todas as outras que você já teve, mas por um descuido dele e por sua sagacidade, você \n"
+                                                + "consegue tirar o artefato dele. Sem você fazer nada, o artefato solta uma magia que atravessa o coração do mago, matando ele em segundos.\n\n"
+                                                + "   == Final: O Artefato == \n\n"
+                                                + "  Depois da luta você está com o artefato em suas mãos e precisa fazer uma escolha. \n\n\n"
+                                                + "  1º Escolha: Usar o poder do artefato para promover a paz no mundo, gerando uma Nova Era.\n\n"
+                                                + "  2º Escolha: Destruir o artefato.\n\n\n"
+                                                + "  Agora é a sua ultima decisão. Qual é a sua escolha? Usar ou destuir? \n\n");
+                                            atualizarOpcoes(
+                                                new String[]{"USAR", "DESTRUIR"},
+                                                new Runnable[]{
+                                                    () -> {
+                                                        descricao.setText("  Você lembra do que o viajante te disse e você usa o artefato para ter poder, mas logo sente uma tontura e fraqueza que te faz solta o artefato. De dentro do artefato sai uma fumaça escura e densa que se transforma \n"
+                                                            + "no viajante por um estante e você nunca mais é visto. \n\n"
+                                                            + "   == Alguns anos depois == \n\n"
+                                                            + "  Um jovem Aventureiro passa pela Torre Sombria e demonstra curiosidade. Enquanto ele olha para a Torre, um viajante aparece e explica que essa Torre é especial e pergunta se ele sabe sobre a Lenda da Torre \n"
+                                                            + "que é passada de geração em geração naquela região. O jovem olha para a Torre e um espirio aventureiro e de coragem preenche seu coração, enquanto os olhos do viajante brilham com um vermelho sombrio... \n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    },
+                                                    () -> {
+                                                        descricao.setText("  Após tudo o que viu e o que passou, você percebe que aquele poder não tem nada de bom e decide destruir o artefato. Ao destruir o artefato uma grande explosão é ouvida na torre e ela começa a cair. Você\n"
+                                                            + "consegue sobreviver por sorte e ao se levantar você observa que uma fumaça escura e espesa com a forma do viajante se forma entre os escombros da Torre, mas logo em seguida se deforma e some. \n\n"
+                                                            + "Nunca mais houve guerras e coisas ruins naquela regiao, pois o artefato maligno que era o causador delas havia sido destruido. \n\n\n"
+                                                            + nomeJogador + ", continua sua aventura pelo mundo e inspira outros aventureiros a enfrentar aquilo que é sombrio, pois tudo é possível para alguém com uma alma pura.\n\n\n\n\n"
+                                                            + "     == FIM DE JOGO ==");
+                                                        atualizarOpcoes(
+                                                            new String[]{"MENU", "SAIR"},
+                                                            new Runnable [] {
+                                                                () -> {new TelaInicial(); dispose();},
+                                                                () -> {System.exit(0);}
+                                                            }
+                                                        );
+                                                    }
+                                                }
+                                            );
+                                        }
+                                    }
+                                );
+                            }
                         }
                     );
                 }
